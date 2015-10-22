@@ -10,12 +10,17 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Insets;
 
-public abstract class AbstractPanel extends JPanel {
+public abstract class MolduraAbstrata extends JPanel {
+	
+	// metodo abstrato, que for utilizar deve implementar, não é responsabilidade dela
+	protected abstract void configuraMiolo();
+	
+	
 
 	/**
 	 * Create the panel.
 	 */
-	public AbstractPanel() {
+	public MolduraAbstrata() {
 		setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
@@ -45,6 +50,9 @@ public abstract class AbstractPanel extends JPanel {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.WHITE);
 		add(panel_1, BorderLayout.SOUTH);
+		
+		// invoca o método lá de cima
+		configuraMiolo();
 
 	}
 

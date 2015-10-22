@@ -53,7 +53,7 @@ public class TelaPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				// adiciona uma aba
-				tabbedPane.addTab("Cadastro de Cliente", new JPanel() );
+				tabbedPane.addTab("Clientes", new TelaCadastroCliente() {} );
 				
 			}
 		});

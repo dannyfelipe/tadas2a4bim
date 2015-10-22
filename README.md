@@ -19,3 +19,11 @@
 
 * Criação de relatório simples_jdbc.jasper;
 * Criação de relatório com conexão a banco de dados.
+
+# 22 de outubro de 2015
+
+* Criação de relatório simples.jasper;
+* Criação de relatório com dados oriundos de um array;
+
+* Criação de relatório simples_jdbc.jasper;
+* Criação de relatório com conexão a banco de dados.
