@@ -1,19 +1,32 @@
 package br.unive.cadastro.telalogin;
 
 import javax.swing.JPanel;
+
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.Dimension;
+
 import javax.swing.JButton;
+
 import java.awt.GridBagConstraints;
 import java.awt.Color;
+
 import javax.swing.JLabel;
+
 import java.awt.Insets;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public abstract class MolduraAbstrata extends JPanel {
 	
+	private JButton btnFechar;
+	
 	// metodo abstrato, que for utilizar deve implementar, não é responsabilidade dela
 	protected abstract void configuraMiolo();
+	
+	public void setCloseAction(ActionListener action) {
+		btnFechar.addActionListener(action);
+	}
 	
 	
 
@@ -40,7 +53,11 @@ public abstract class MolduraAbstrata extends JPanel {
 		gbc_lblOl.gridy = 0;
 		panel.add(lblOl, gbc_lblOl);
 		
-		JButton btnFechar = new JButton("Fechar");
+		btnFechar = new JButton("Fechar");
+		/*btnFechar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});*/
 		GridBagConstraints gbc_btnFechar = new GridBagConstraints();
 		gbc_btnFechar.anchor = GridBagConstraints.EAST;
 		gbc_btnFechar.gridx = 1;

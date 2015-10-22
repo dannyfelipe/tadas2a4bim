@@ -39,6 +39,7 @@ public class TelaPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaPrincipal() {
+		setTitle("SISTEMINHA 1.0");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
@@ -52,8 +53,38 @@ public class TelaPrincipal extends JFrame {
 		mntmCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				// invoca o método para abrir a aba
+				abrirTela();
+				
+			}
+
+			private void abrirTela() {
+				
+				// moldura
+				TelaCadastroCliente telaCadastroCliente = new TelaCadastroCliente();
+				// criação da ação por função para fechar a aba aberta
+				telaCadastroCliente.setCloseAction(e -> tabbedPane.remove(telaCadastroCliente));
+				// adiciona uma aba Clientes no sistema
+				tabbedPane.addTab("Clientes", telaCadastroCliente);
+				
+				
+				// moldura
+				//TelaCadastroCliente telaCadastroCliente = new TelaCadastroCliente();
+				
+				// criação da ação para fechar a tela
+				/*ActionListener action = new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						
+						tabbedPane.remove(telaCadastroCliente);
+					}
+				};*/
+				
+				/*telaCadastroCliente.setCloseAction(action);*/
+				
 				// adiciona uma aba
-				tabbedPane.addTab("Clientes", new TelaCadastroCliente() {} );
+				/*tabbedPane.addTab("Clientes", new TelaCadastroCliente() {} );*/
 				
 			}
 		});
